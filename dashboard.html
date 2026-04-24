@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ServeFlow — Leader Dashboard</title>
+  <meta name="description" content="ServeFlow leader dashboard for church workforce management." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body class="dash-body">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M2 17l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        </div>
+        <span>ServeFlow</span>
+      </a>
+    </div>
+
+    <div class="sidebar-church glass-card">
+      <div class="church-avatar">DC</div>
+      <div>
+        <div class="church-name">Grace Assembly</div>
+        <div class="church-plan"><span class="badge badge-purple">Growth Plan</span></div>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="#" class="nav-item active" data-page="overview" id="nav-overview">
+        <svg width="18" height="18" viewBox="0 0 30 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/><rect x="14" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/><rect x="3" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/><rect x="14" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/></svg>
+        <span>Overview</span>
+      </a>
+      <a href="#" class="nav-item" data-page="workers" id="nav-workers">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M21 21v-2a4 4 0 0 0-3-3.87" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>Workers</span>
+      </a>
+      <a href="#" class="nav-item" data-page="schedule" id="nav-schedule">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="M16 2v4M8 2v4M3 10h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>Schedule</span>
+      </a>
+      <a href="#" class="nav-item" data-page="attendance" id="nav-attendance">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 11l3 3L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Attendance</span>
+      </a>
+      <a href="#" class="nav-item" data-page="replacements" id="nav-replacements">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M16 3l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 7H4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M8 21l-4-4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>Replacements</span>
+        <span class="nav-badge" id="replacementBadge">3</span>
+      </a>
+      <a href="#" class="nav-item" data-page="reminders" id="nav-reminders">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.73 21a2 2 0 0 1-3.46 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Reminders</span>
+      </a>
+      <a href="#" class="nav-item" data-page="reports" id="nav-reports">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><line x1="18" y1="20" x2="18" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="20" x2="12" y2="4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="6" y1="20" x2="6" y2="14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>Reports</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <a href="#" class="nav-item" data-page="settings">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>Settings</span>
+      </a>
+      <a href="index.html" class="nav-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="16 17 21 12 16 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="21" y1="12" x2="9" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>Back to Site</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="dash-main" id="dashMain">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle Sidebar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <div>
+          <h1 class="topbar-title" id="pageTitle">Overview</h1>
+          <p class="topbar-sub">Sunday 27th April, 2025 — Grace Assembly</p>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <button class="topbar-icon-btn" title="Notifications">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" stroke="currentColor" stroke-width="2"/><path d="M13.73 21a2 2 0 0 1-3.46 0" stroke="currentColor" stroke-width="2"/></svg>
+          <span class="notif-dot"></span>
+        </button>
+        <div class="topbar-avatar">CO</div>
+      </div>
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-content">
+
+      <!-- ========== OVERVIEW PAGE ========== -->
+      <div class="page" id="page-overview">
+
+        <!-- ALERT BANNER -->
+        <div class="alert-banner glass-card">
+          <span>⚠️</span>
+          <p><strong>3 workers</strong> have been absent for 2+ consecutive services. <a href="#" id="viewAbsent">Review now →</a></p>
+          <button class="alert-close" id="alertClose">✕</button>
+        </div>
+
+        <!-- STAT CARDS -->
+        <div class="stats-grid">
+          <div class="stat-card glass-card">
+            <div class="stat-icon" style="background:linear-gradient(135deg,#7C3AED,#4F46E5)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <div class="stat-body">
+              <div class="stat-val" id="stat-workers">142</div>
+              <div class="stat-label">Active Workers</div>
+            </div>
+            <div class="stat-change positive">+6 this month</div>
+          </div>
+          <div class="stat-card glass-card">
+            <div class="stat-icon" style="background:linear-gradient(135deg,#059669,#10B981)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 11l3 3L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="stat-body">
+              <div class="stat-val" id="stat-attendance">87%</div>
+              <div class="stat-label">Avg Attendance Rate</div>
+            </div>
+            <div class="stat-change positive">+3% vs last month</div>
+          </div>
+          <div class="stat-card glass-card">
+            <div class="stat-icon" style="background:linear-gradient(135deg,#D97706,#F59E0B)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="M16 2v4M8 2v4M3 10h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <div class="stat-body">
+              <div class="stat-val">18</div>
+              <div class="stat-label">Services This Month</div>
+            </div>
+            <div class="stat-change neutral">April 2025</div>
+          </div>
+          <div class="stat-card glass-card">
+            <div class="stat-icon" style="background:linear-gradient(135deg,#E11D48,#F43F5E)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M16 3l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 7H4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <div class="stat-body">
+              <div class="stat-val" id="stat-replacements">3</div>
+              <div class="stat-label">Pending Replacements</div>
+            </div>
+            <div class="stat-change negative">Needs attention</div>
+          </div>
+        </div>
+
+        <div class="overview-grid">
+          <!-- ATTENDANCE CHART -->
+          <div class="chart-card glass-card">
+            <div class="card-header">
+              <h3>Attendance by Department</h3>
+              <span class="badge badge-info">April 2025</span>
+            </div>
+            <div class="bar-chart" id="deptChart">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+
+          <!-- UPCOMING SCHEDULE -->
+          <div class="upcoming-card glass-card">
+            <div class="card-header">
+              <h3>This Sunday's Roster</h3>
+              <span class="badge badge-success">27 Apr</span>
+            </div>
+            <div class="upcoming-list" id="upcomingList">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- WORKERS FLAGGED -->
+        <div class="flagged-card glass-card">
+          <div class="card-header">
+            <h3>⚠️ Workers Needing Attention</h3>
+            <span class="text-secondary text-sm">2+ consecutive absences</span>
+          </div>
+          <div class="flagged-table-wrap">
+            <table class="dash-table" id="flaggedTable">
+              <thead>
+                <tr><th>Worker</th><th>Department</th><th>Absences</th><th>Last Seen</th><th>Action</th></tr>
+              </thead>
+              <tbody id="flaggedBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ========== WORKERS PAGE ========== -->
+      <div class="page hidden" id="page-workers">
+        <div class="page-toolbar">
+          <div class="search-box">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <input type="text" id="workerSearch" placeholder="Search workers…" />
+          </div>
+          <div class="toolbar-right">
+            <select class="dash-select" id="deptFilter">
+              <option value="">All Departments</option>
+              <option>Ushers</option>
+              <option>Choir</option>
+              <option>Media Team</option>
+              <option>Protocol</option>
+              <option>Prayer Unit</option>
+              <option>Security</option>
+              <option>Children's Church</option>
+              <option>Technical Team</option>
+            </select>
+            <button class="btn btn-primary btn-sm" id="addWorkerBtn">+ Add Worker</button>
+          </div>
+        </div>
+
+        <div class="glass-card table-card">
+          <table class="dash-table" id="workersTable">
+            <thead>
+              <tr><th>Name</th><th>Department</th><th>Role</th><th>Phone</th><th>Status</th><th>Attendance</th><th>Actions</th></tr>
+            </thead>
+            <tbody id="workersBody"></tbody>
+          </table>
+        </div>
+
+        <!-- ADD WORKER MODAL -->
+        <div class="modal-overlay hidden" id="addWorkerModal">
+          <div class="modal glass-card">
+            <div class="modal-header">
+              <h3>Add New Worker</h3>
+              <button class="modal-close" id="closeWorkerModal">✕</button>
+            </div>
+            <div class="modal-body">
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Full Name</label>
+                  <input type="text" class="dash-input" id="workerName" placeholder="e.g. Adaeze Okonkwo" />
+                </div>
+                <div class="form-group">
+                  <label>Phone Number</label>
+                  <input type="tel" class="dash-input" id="workerPhone" placeholder="e.g. 08012345678" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Department</label>
+                  <select class="dash-select dash-input" id="workerDept">
+                    <option>Ushers</option><option>Choir</option><option>Media Team</option>
+                    <option>Protocol</option><option>Prayer Unit</option><option>Security</option>
+                    <option>Children's Church</option><option>Technical Team</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Role in Department</label>
+                  <input type="text" class="dash-input" id="workerRole" placeholder="e.g. Team Lead, Member" />
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-ghost" id="cancelWorkerModal">Cancel</button>
+              <button class="btn btn-primary" id="saveWorkerBtn">Add Worker</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== SCHEDULE PAGE ========== -->
+      <div class="page hidden" id="page-schedule">
+        <div class="page-toolbar">
+          <div class="week-nav">
+            <button class="btn btn-ghost btn-sm" id="prevWeek">‹ Prev</button>
+            <span class="week-label" id="weekLabel">Week of 27 Apr – 3 May 2025</span>
+            <button class="btn btn-ghost btn-sm" id="nextWeek">Next ›</button>
+          </div>
+          <button class="btn btn-primary btn-sm" id="generateRota">⚡ Generate Rotation</button>
+        </div>
+
+        <div class="schedule-grid glass-card">
+          <div class="schedule-header-row">
+            <div class="sch-dept-col">Department</div>
+            <div class="sch-day" id="sch-d0">Sun 27</div>
+            <div class="sch-day" id="sch-d1">Mon 28</div>
+            <div class="sch-day" id="sch-d2">Wed 30</div>
+            <div class="sch-day" id="sch-d3">Fri 2</div>
+            <div class="sch-day" id="sch-d4">Sun 4</div>
+          </div>
+          <div id="scheduleBody"><!-- Rendered by JS --></div>
+        </div>
+
+        <!-- Rota Generation Success -->
+        <div class="rota-success hidden glass-card" id="rotaSuccess">
+          <div style="font-size:2rem">🎉</div>
+          <div>
+            <strong>Rotation generated!</strong>
+            <p class="text-secondary text-sm">All departments assigned for the next 4 weeks. Workers will be notified via WhatsApp.</p>
+          </div>
+          <button class="btn btn-primary btn-sm">Export PDF</button>
+        </div>
+      </div>
+
+      <!-- ========== ATTENDANCE PAGE ========== -->
+      <div class="page hidden" id="page-attendance">
+        <div class="page-toolbar">
+          <div class="toolbar-left">
+            <select class="dash-select" id="attendanceDept">
+              <option>All Departments</option>
+              <option>Ushers</option><option>Choir</option><option>Media Team</option>
+              <option>Protocol</option><option>Prayer Unit</option>
+            </select>
+            <select class="dash-select" id="attendanceService">
+              <option>Sunday 27 Apr — 1st Service</option>
+              <option>Sunday 27 Apr — 2nd Service</option>
+              <option>Friday 25 Apr — Prayer</option>
+            </select>
+          </div>
+          <button class="btn btn-primary btn-sm" id="saveAttendanceBtn">💾 Save Attendance</button>
+        </div>
+
+        <div class="attendance-summary glass-card">
+          <div class="att-sum-item">
+            <div class="att-sum-val text-emerald" id="presentCount">0</div>
+            <div class="att-sum-label">Present</div>
+          </div>
+          <div class="att-sum-item">
+            <div class="att-sum-val text-rose" id="absentCount">0</div>
+            <div class="att-sum-label">Absent</div>
+          </div>
+          <div class="att-sum-item">
+            <div class="att-sum-val text-gold" id="lateCount">0</div>
+            <div class="att-sum-label">Late</div>
+          </div>
+          <div class="att-sum-item">
+            <div class="att-sum-val text-accent" id="excusedCount">0</div>
+            <div class="att-sum-label">Excused</div>
+          </div>
+          <div class="att-sum-item att-rate">
+            <div class="att-sum-val" id="attRate">—%</div>
+            <div class="att-sum-label">Attendance Rate</div>
+          </div>
+        </div>
+
+        <div class="glass-card table-card">
+          <table class="dash-table">
+            <thead>
+              <tr><th>Worker</th><th>Department</th><th>Role</th><th>Status</th></tr>
+            </thead>
+            <tbody id="attendanceBody"><!-- Rendered by JS --></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ========== REPLACEMENTS PAGE ========== -->
+      <div class="page hidden" id="page-replacements">
+        <div class="replacements-list" id="replacementsList"><!-- Rendered by JS --></div>
+      </div>
+
+      <!-- ========== REMINDERS PAGE ========== -->
+      <div class="page hidden" id="page-reminders">
+        <div class="reminders-header glass-card">
+          <div>
+            <h3>Automated Reminders</h3>
+            <p class="text-secondary text-sm">Reminders are sent automatically via WhatsApp. You can also trigger manual sends below.</p>
+          </div>
+          <button class="btn btn-primary btn-sm" id="sendReminderBtn">📤 Send Now to All</button>
+        </div>
+        <div class="reminder-log-title">Recent Reminder Log</div>
+        <div class="glass-card table-card">
+          <table class="dash-table">
+            <thead><tr><th>Worker</th><th>Type</th><th>Channel</th><th>Sent At</th><th>Status</th></tr></thead>
+            <tbody id="reminderLogBody"><!-- Rendered by JS --></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ========== REPORTS PAGE ========== -->
+      <div class="page hidden" id="page-reports">
+        <div class="reports-grid">
+          <div class="glass-card report-card">
+            <div class="report-icon">📈</div>
+            <h3>Monthly Attendance Report</h3>
+            <p class="text-secondary text-sm">Full breakdown of attendance per department for the selected month.</p>
+            <button class="btn btn-secondary btn-sm" style="margin-top:16px">Download PDF</button>
+          </div>
+          <div class="glass-card report-card">
+            <div class="report-icon">👥</div>
+            <h3>Worker Activity Report</h3>
+            <p class="text-secondary text-sm">Most active and frequently absent workers across all departments.</p>
+            <button class="btn btn-secondary btn-sm" style="margin-top:16px">Download PDF</button>
+          </div>
+          <div class="glass-card report-card">
+            <div class="report-icon">🗓️</div>
+            <h3>Service Rotation Export</h3>
+            <p class="text-secondary text-sm">Export the monthly rotation timetable as a shareable PDF or image.</p>
+            <button class="btn btn-secondary btn-sm" style="margin-top:16px">Export Timetable</button>
+          </div>
+          <div class="glass-card report-card">
+            <div class="report-icon">🔄</div>
+            <h3>Replacement History</h3>
+            <p class="text-secondary text-sm">Log of all replacement requests submitted, approved, and declined.</p>
+            <button class="btn btn-secondary btn-sm" style="margin-top:16px">View Log</button>
+          </div>
+        </div>
+
+        <div class="glass-card" style="padding:32px; margin-top:24px;">
+          <div class="card-header" style="margin-bottom:24px">
+            <h3>Attendance Trend — Last 6 Months</h3>
+          </div>
+          <div class="trend-chart" id="trendChart"><!-- Rendered by JS --></div>
+        </div>
+      </div>
+
+    </div><!-- /page-content -->
+  </div><!-- /dash-main -->
+
+  <!-- TOAST -->
+  <div class="toast hidden" id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

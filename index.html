@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ServeFlow — Church Workforce Management Platform</title>
+  <meta name="description" content="ServeFlow helps churches eliminate scheduling confusion, track worker attendance, and automate service reminders — all from one powerful dashboard." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="landing.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner container">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M2 17l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        </div>
+        <span>ServeFlow</span>
+      </a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="nav-actions">
+        <a href="dashboard.html" class="btn btn-secondary btn-sm">View Demo</a>
+        <a href="#pricing" class="btn btn-primary btn-sm">Get Started</a>
+      </div>
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile-menu" id="mobileMenu">
+      <a href="#features">Features</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="dashboard.html" class="btn btn-primary btn-sm" style="width:100%;justify-content:center;">View Demo Dashboard</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero noise-overlay" id="hero">
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+    <div class="container hero-content">
+      <div class="hero-badge animate-fade-up">
+        <span class="badge badge-purple">🇳🇬 Built for African Churches</span>
+      </div>
+      <h1 class="hero-headline animate-fade-up delay-100">
+        End the Ministry Chaos.<br/>
+        <span class="glow-text">Run Your Church</span><br/>
+        Like a System.
+      </h1>
+      <p class="hero-sub animate-fade-up delay-200">
+        ServeFlow helps churches schedule workers, track attendance, and eliminate last-minute confusion — all from one centralized platform. No more WhatsApp chaos.
+      </p>
+      <div class="hero-ctas animate-fade-up delay-300">
+        <a href="dashboard.html" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><polygon points="5 3 19 12 5 21 5 3" fill="currentColor"/></svg>
+          See Live Demo
+        </a>
+        <a href="#how-it-works" class="btn btn-secondary">How It Works</a>
+      </div>
+      <div class="hero-social-proof animate-fade-up delay-400">
+        <div class="proof-avatars">
+          <div class="avatar av1">P</div>
+          <div class="avatar av2">A</div>
+          <div class="avatar av3">M</div>
+          <div class="avatar av4">C</div>
+        </div>
+        <p><strong>50+ ministry leaders</strong> already on the waitlist</p>
+      </div>
+      <div class="hero-dashboard-preview animate-fade-up delay-500">
+        <div class="dashboard-preview-bar">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+          <span class="preview-title">ServeFlow Dashboard — Grace Assembly</span>
+        </div>
+        <div class="dashboard-preview-body">
+          <div class="preview-sidebar">
+            <div class="ps-item ps-active"><span>🏠</span> Overview</div>
+            <div class="ps-item"><span>👥</span> Workers</div>
+            <div class="ps-item"><span>🗓️</span> Schedule</div>
+            <div class="ps-item"><span>✅</span> Attendance</div>
+            <div class="ps-item"><span>🔄</span> Replacements</div>
+            <div class="ps-item"><span>📊</span> Reports</div>
+          </div>
+          <div class="preview-main">
+            <div class="preview-stats">
+              <div class="pstat">
+                <div class="pstat-val">142</div>
+                <div class="pstat-label">Active Workers</div>
+              </div>
+              <div class="pstat">
+                <div class="pstat-val">87%</div>
+                <div class="pstat-label">Avg Attendance</div>
+              </div>
+              <div class="pstat">
+                <div class="pstat-val">8</div>
+                <div class="pstat-label">Departments</div>
+              </div>
+              <div class="pstat">
+                <div class="pstat-val">3</div>
+                <div class="pstat-label">Pending Requests</div>
+              </div>
+            </div>
+            <div class="preview-schedule-label">This Sunday — Assigned Workers</div>
+            <div class="preview-workers">
+              <div class="pw-row"><span class="pw-dot green"></span> Adaeze Okonkwo — Ushers</div>
+              <div class="pw-row"><span class="pw-dot green"></span> Tunde Balogun — Media Team</div>
+              <div class="pw-row"><span class="pw-dot yellow"></span> Grace Emeka — Choir (Replacement pending)</div>
+              <div class="pw-row"><span class="pw-dot green"></span> Samuel Dike — Protocol</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="problem-section section" id="problem">
+    <div class="container">
+      <div class="section-label">The Problem</div>
+      <h2 class="section-title">Does This Sound Familiar?</h2>
+      <div class="problem-grid">
+        <div class="problem-card glass-card">
+          <div class="problem-icon">📱</div>
+          <p>"Who is on duty this Sunday?" — asked in a WhatsApp group with 80 unread messages</p>
+        </div>
+        <div class="problem-card glass-card">
+          <div class="problem-icon">😤</div>
+          <p>Workers show up on the wrong Sunday because nobody told them the roster changed</p>
+        </div>
+        <div class="problem-card glass-card">
+          <div class="problem-icon">📓</div>
+          <p>Attendance still tracked in a dog-eared notebook that gets lost before the month ends</p>
+        </div>
+        <div class="problem-card glass-card">
+          <div class="problem-icon">🔁</div>
+          <p>Replacing an absent worker means calling five people on a Saturday night</p>
+        </div>
+        <div class="problem-card glass-card">
+          <div class="problem-icon">😶</div>
+          <p>Department heads have no idea who their most reliable workers are</p>
+        </div>
+        <div class="problem-card glass-card">
+          <div class="problem-icon">⌛</div>
+          <p>Creating next month's rotation takes 3 hours of manual work every single time</p>
+        </div>
+      </div>
+      <div class="problem-cta">
+        <p class="text-secondary">ServeFlow replaces all of this with one clean, automated system.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features-section section" id="features">
+    <div class="container">
+      <div class="section-label">Core Features</div>
+      <h2 class="section-title">Everything Your Church <span class="glow-text">Needs to Run Smoothly</span></h2>
+      <p class="section-sub">Six powerful features. One system. Zero chaos.</p>
+      <div class="features-grid">
+        <div class="feature-card glass-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg,#7C3AED,#4F46E5)">🗓️</div>
+          <h3>Worker Scheduling</h3>
+          <p>Assign workers to specific service days and ministry roles. Weekly, bi-weekly, or monthly. Always know who's on duty.</p>
+          <ul class="feature-list">
+            <li>Weekly & monthly schedules</li>
+            <li>Department-specific assignments</li>
+            <li>Easy reassignment</li>
+          </ul>
+        </div>
+        <div class="feature-card glass-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg,#059669,#10B981)">🔄</div>
+          <h3>Rotation Timetable Generator</h3>
+          <p>Generate a full month's service rotation in seconds. Fair, automatic, and shareable instantly to WhatsApp.</p>
+          <ul class="feature-list">
+            <li>Auto-generate fair rotations</li>
+            <li>One-click PDF/image export</li>
+            <li>Multi-service support</li>
+          </ul>
+        </div>
+        <div class="feature-card glass-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg,#D97706,#F59E0B)">✅</div>
+          <h3>Attendance Tracking</h3>
+          <p>Mark workers present, absent, late, or excused — right from your phone on service day. Build accountability over time.</p>
+          <ul class="feature-list">
+            <li>Present / Absent / Late / Excused</li>
+            <li>Full attendance history</li>
+            <li>Per-worker & per-dept reports</li>
+          </ul>
+        </div>
+        <div class="feature-card glass-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg,#0EA5E9,#0284C7)">🔔</div>
+          <h3>Automated Reminders</h3>
+          <p>Workers receive automatic WhatsApp/SMS reminders before their scheduled service. No more "I forgot" excuses.</p>
+          <ul class="feature-list">
+            <li>2-day advance reminder</li>
+            <li>Morning-of reminder</li>
+            <li>WhatsApp + SMS delivery</li>
+          </ul>
+        </div>
+        <div class="feature-card glass-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg,#E11D48,#F43F5E)">🔁</div>
+          <h3>Replacement Request System</h3>
+          <p>Workers submit absence requests through a structured flow. Leaders get notified, approve replacements, and everyone is updated automatically.</p>
+          <ul class="feature-list">
+            <li>Worker absence submission</li>
+            <li>Leader approval workflow</li>
+            <li>Auto-notify replacement</li>
+          </ul>
+        </div>
+        <div class="feature-card glass-card feature-card-highlight">
+          <div class="feature-icon" style="background: linear-gradient(135deg,#7C3AED,#A78BFA)">📊</div>
+          <h3>Leader Dashboard</h3>
+          <p>One screen that shows ministry health. Attendance trends, active workers, flagged absences, and upcoming schedules — in real time.</p>
+          <ul class="feature-list">
+            <li>Ministry health score</li>
+            <li>Department-level analytics</li>
+            <li>Absence alerts & trends</li>
+          </ul>
+          <a href="dashboard.html" class="btn btn-primary btn-sm" style="margin-top:16px;">View Dashboard →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-section section" id="how-it-works">
+    <div class="container">
+      <div class="section-label">How It Works</div>
+      <h2 class="section-title">Up and Running in <span class="glow-text">Under a Week</span></h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">01</div>
+          <div class="step-content glass-card">
+            <h3>We Set Up Your Church</h3>
+            <p>Our team configures your church profile, departments, service days, and worker structure. Done in 1–3 days.</p>
+          </div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step">
+          <div class="step-number">02</div>
+          <div class="step-content glass-card">
+            <h3>Import Your Workers</h3>
+            <p>Upload a CSV or add workers manually. Every worker receives a WhatsApp welcome message automatically.</p>
+          </div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step">
+          <div class="step-number">03</div>
+          <div class="step-content glass-card">
+            <h3>Generate First Rotation</h3>
+            <p>Create your first monthly timetable in minutes. Review it, publish it, and workers are notified instantly.</p>
+          </div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step">
+          <div class="step-number">04</div>
+          <div class="step-content glass-card">
+            <h3>Go Live & Stay in Control</h3>
+            <p>Attendance is tracked on service day. Reminders go out automatically. Your dashboard shows everything in real time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing-section section" id="pricing">
+    <div class="container">
+      <div class="section-label">Pricing</div>
+      <h2 class="section-title">Simple, Honest Pricing</h2>
+      <p class="section-sub">One-time setup fee. Monthly subscription. Cancel anytime.</p>
+      <div class="pricing-grid">
+        <div class="pricing-card glass-card">
+          <div class="pricing-tier">Starter</div>
+          <div class="pricing-for">Small Churches · Up to 50 Workers</div>
+          <div class="pricing-amount">₦10,000<span>/month</span></div>
+          <div class="pricing-setup">+ ₦20,000 one-time setup</div>
+          <ul class="pricing-features">
+            <li>✅ Up to 50 workers</li>
+            <li>✅ Up to 5 departments</li>
+            <li>✅ All 6 core features</li>
+            <li>✅ WhatsApp reminders</li>
+            <li>✅ Email support</li>
+          </ul>
+          <a href="#contact" class="btn btn-secondary w-full" style="justify-content:center">Book a Demo</a>
+        </div>
+        <div class="pricing-card pricing-card-featured glass-card">
+          <div class="pricing-popular">Most Popular</div>
+          <div class="pricing-tier">Growth</div>
+          <div class="pricing-for">Mid-sized Churches · Up to 200 Workers</div>
+          <div class="pricing-amount">₦25,000<span>/month</span></div>
+          <div class="pricing-setup">+ ₦50,000 one-time setup</div>
+          <ul class="pricing-features">
+            <li>✅ Up to 200 workers</li>
+            <li>✅ Unlimited departments</li>
+            <li>✅ All 6 core features</li>
+            <li>✅ WhatsApp + SMS reminders</li>
+            <li>✅ PDF timetable export</li>
+            <li>✅ Priority support</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary w-full" style="justify-content:center">Get Started</a>
+        </div>
+        <div class="pricing-card glass-card">
+          <div class="pricing-tier">Enterprise</div>
+          <div class="pricing-for">Large Churches · 200+ Workers</div>
+          <div class="pricing-amount">₦50,000<span>+/month</span></div>
+          <div class="pricing-setup">+ ₦100,000+ setup</div>
+          <ul class="pricing-features">
+            <li>✅ Unlimited workers</li>
+            <li>✅ Multi-campus support</li>
+            <li>✅ All Growth features</li>
+            <li>✅ Dedicated account manager</li>
+            <li>✅ Custom onboarding</li>
+            <li>✅ Denomination HQ deals</li>
+          </ul>
+          <a href="#contact" class="btn btn-secondary w-full" style="justify-content:center">Contact Us</a>
+        </div>
+      </div>
+      <p class="pricing-note">Pay annually and get 2 months free. All prices in Nigerian Naira (₦).</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section section" id="faq">
+    <div class="container">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Common Questions</h2>
+      <div class="faq-list" id="faqList">
+        <div class="faq-item glass-card">
+          <button class="faq-q">Do my workers need smartphones or the app?<span class="faq-arrow">›</span></button>
+          <div class="faq-a">No. Workers receive reminders via WhatsApp or SMS — which works on any phone. Only leaders/admins need the web dashboard.</div>
+        </div>
+        <div class="faq-item glass-card">
+          <button class="faq-q">What messaging channels do you support?<span class="faq-arrow">›</span></button>
+          <div class="faq-a">WhatsApp Business (primary) and SMS (fallback). Email notifications are also available for admin users.</div>
+        </div>
+        <div class="faq-item glass-card">
+          <button class="faq-q">Can I import my existing worker list?<span class="faq-arrow">›</span></button>
+          <div class="faq-a">Yes. You can upload a CSV file with your worker names, phone numbers, and departments. Our team assists during onboarding.</div>
+        </div>
+        <div class="faq-item glass-card">
+          <button class="faq-q">Is there a free trial?<span class="faq-arrow">›</span></button>
+          <div class="faq-a">We offer a free 15-minute live demo tailored to your church. After that, we'll set up a 7-day trial during onboarding.</div>
+        </div>
+        <div class="faq-item glass-card">
+          <button class="faq-q">What happens if I want to cancel?<span class="faq-arrow">›</span></button>
+          <div class="faq-a">You can cancel anytime. Your data will be exported for you. No long-term contracts — we earn your renewal every month.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section section" id="contact">
+    <div class="container">
+      <div class="cta-box glass-card animate-pulse-glow">
+        <div class="cta-glow"></div>
+        <h2>Your Church Deserves<br/><span class="glow-text">Better Systems.</span></h2>
+        <p>Stop managing 100 people with WhatsApp and a notebook. ServeFlow was built for churches like yours.</p>
+        <div class="cta-actions">
+          <a href="dashboard.html" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><polygon points="5 3 19 12 5 21 5 3" fill="currentColor"/></svg>
+            View Live Demo
+          </a>
+          <a href="https://wa.me/234XXXXXXXXXX?text=Hi%2C%20I%27m%20interested%20in%20ServeFlow%20for%20my%20church" target="_blank" class="btn btn-secondary">
+            💬 WhatsApp Us
+          </a>
+        </div>
+        <p class="cta-note">No credit card required to see the demo. Setup takes less than 7 days.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="nav-logo-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M2 17l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
+            <span>ServeFlow</span>
+          </a>
+          <p>Church workforce management infrastructure for African ministries.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Product</h4>
+            <a href="#features">Features</a>
+            <a href="dashboard.html">Demo</a>
+            <a href="#pricing">Pricing</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="#">About</a>
+            <a href="#">Blog</a>
+            <a href="#">Contact</a>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <a href="mailto:hello@serveflow.ng">hello@serveflow.ng</a>
+            <a href="#">WhatsApp</a>
+            <a href="#">Instagram</a>
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="footer-bottom">
+        <p>© 2026 ServeFlow. All rights reserved.</p>
+        <p>Built for the Church. Built in Nigeria. 🇳🇬</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="landing.js"></script>
+</body>
+</html>
