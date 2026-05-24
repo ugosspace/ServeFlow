@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing — ServeFlow Church Workforce Management</title>
+  <meta name="description" content="Simple, transparent pricing for ServeFlow. Choose the plan that fits your church — Starter, Growth, or Enterprise. Cancel anytime." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="pricing.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner container">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M2 17l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        </div>
+        <span>ServeFlow</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html#features">Features</a>
+        <a href="index.html#how-it-works">How It Works</a>
+        <a href="pricing.html" class="nav-active">Pricing</a>
+        <a href="index.html#faq">FAQ</a>
+      </div>
+      <div class="nav-actions">
+        <a href="dashboard.html" class="btn btn-secondary btn-sm">View Demo</a>
+        <a href="#plans" class="btn btn-primary btn-sm">Get Started</a>
+      </div>
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile-menu" id="mobileMenu">
+      <a href="index.html#features">Features</a>
+      <a href="index.html#how-it-works">How It Works</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="dashboard.html" class="btn btn-primary btn-sm" style="width:100%;justify-content:center;">View Demo Dashboard</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pricing-hero noise-overlay">
+    <div class="hero-glow ph-glow-1"></div>
+    <div class="hero-glow ph-glow-2"></div>
+    <div class="container pricing-hero-content">
+      <div class="animate-fade-up">
+        <span class="badge badge-purple">💰 Transparent Pricing</span>
+      </div>
+      <h1 class="pricing-hero-title animate-fade-up delay-100">
+        Plans That Grow<br/><span class="glow-text">With Your Church</span>
+      </h1>
+      <p class="pricing-hero-sub animate-fade-up delay-200">
+        No hidden fees. No long-term lock-in. Just honest pricing that scales with your ministry — from a small congregation to a multi-campus denomination.
+      </p>
+      <!-- BILLING TOGGLE -->
+      <div class="billing-toggle animate-fade-up delay-300" id="billingToggle">
+        <span class="billing-label" id="lblMonthly">Monthly</span>
+        <button class="toggle-pill" id="toggleBilling" aria-label="Toggle annual billing">
+          <span class="toggle-thumb" id="toggleThumb"></span>
+        </button>
+        <span class="billing-label" id="lblAnnual">Annual</span>
+        <span class="save-badge" id="saveBadge">Save 20%</span>
+      </div>
+      <!-- SOCIAL PROOF BAR -->
+      <div class="proof-bar animate-fade-up delay-400">
+        <div class="proof-avatars">
+          <div class="avatar av1">P</div>
+          <div class="avatar av2">A</div>
+          <div class="avatar av3">M</div>
+          <div class="avatar av4">C</div>
+          <div class="avatar av5">T</div>
+        </div>
+        <p><strong>120+ ministry leaders</strong> already using ServeFlow across Nigeria, Ghana & Kenya</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INCLUDED IN ALL PLANS -->
+  <section class="all-plans-section section" id="all-plans">
+    <div class="container">
+      <div class="all-plans-header">
+        <div class="section-label">Every Plan Includes</div>
+        <h2 class="section-title">The Core That Never Changes</h2>
+        <p class="section-sub">These essentials come with every ServeFlow subscription — no tier restrictions.</p>
+      </div>
+      <div class="all-plans-grid">
+        <div class="all-plan-item glass-card">
+          <div class="all-plan-icon">🗓️</div>
+          <div class="all-plan-text">
+            <div class="all-plan-name">Worker Scheduling</div>
+            <div class="all-plan-desc">Assign workers to service days and ministry roles</div>
+          </div>
+        </div>
+        <div class="all-plan-item glass-card">
+          <div class="all-plan-icon">✅</div>
+          <div class="all-plan-text">
+            <div class="all-plan-name">Attendance Tracking</div>
+            <div class="all-plan-desc">Mark present, absent, late, or excused per service</div>
+          </div>
+        </div>
+        <div class="all-plan-item glass-card">
+          <div class="all-plan-icon">🔔</div>
+          <div class="all-plan-text">
+            <div class="all-plan-name">WhatsApp Reminders</div>
+            <div class="all-plan-desc">Automated service reminders sent to every worker</div>
+          </div>
+        </div>
+        <div class="all-plan-item glass-card">
+          <div class="all-plan-icon">🔁</div>
+          <div class="all-plan-text">
+            <div class="all-plan-name">Replacement Requests</div>
+            <div class="all-plan-desc">Structured absence & replacement workflow</div>
+          </div>
+        </div>
+        <div class="all-plan-item glass-card">
+          <div class="all-plan-icon">📊</div>
+          <div class="all-plan-text">
+            <div class="all-plan-name">Leader Dashboard</div>
+            <div class="all-plan-desc">Real-time ministry health overview</div>
+          </div>
+        </div>
+        <div class="all-plan-item glass-card">
+          <div class="all-plan-icon">🔒</div>
+          <div class="all-plan-text">
+            <div class="all-plan-name">Secure & Private</div>
+            <div class="all-plan-desc">Your church data is never shared or sold</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING PLANS -->
+  <section class="plans-section section" id="plans">
+    <div class="container">
+      <div class="section-label">Pricing Plans</div>
+      <h2 class="section-title">Pick Your <span class="glow-text">Perfect Plan</span></h2>
+      <p class="section-sub">All plans include a 7-day free trial. No credit card required to start.</p>
+
+      <div class="plans-grid">
+
+        <!-- STARTER -->
+        <div class="plan-card glass-card" id="card-starter">
+          <div class="plan-header">
+            <div class="plan-name">Starter</div>
+            <div class="plan-for">Small Churches · Up to 50 Workers</div>
+            <div class="plan-price-wrap">
+              <div class="plan-price">
+                <span class="plan-currency">$</span>
+                <span class="plan-amount" data-monthly="10" data-annual="8">10</span>
+                <span class="plan-period">/mo</span>
+              </div>
+              <div class="plan-annual-note" id="note-starter">Billed $96/year</div>
+            </div>
+            <div class="plan-setup">+ $20 one-time setup fee</div>
+          </div>
+          <ul class="plan-features">
+            <li class="feat-yes">Up to 50 workers
+              <span class="feat-tip" data-tip="Each person in any department counts as one worker.">?</span>
+            </li>
+            <li class="feat-yes">Up to 5 departments</li>
+            <li class="feat-yes">All 6 core features</li>
+            <li class="feat-yes">WhatsApp reminders</li>
+            <li class="feat-yes">Email support (48hr)</li>
+            <li class="feat-no">SMS fallback</li>
+            <li class="feat-no">PDF timetable export</li>
+            <li class="feat-no">Multi-campus</li>
+            <li class="feat-no">Priority support</li>
+          </ul>
+          <a href="checkout.html?plan=starter" class="btn btn-secondary plan-cta" id="cta-starter">Get Started Free</a>
+          <p class="plan-trial">7-day free trial · No card needed</p>
+        </div>
+
+        <!-- GROWTH (FEATURED) -->
+        <div class="plan-card plan-card-featured glass-card" id="card-growth">
+          <div class="plan-popular-badge">⭐ Most Popular</div>
+          <div class="plan-header">
+            <div class="plan-name">Growth</div>
+            <div class="plan-for">Mid-sized Churches · Up to 200 Workers</div>
+            <div class="plan-price-wrap">
+              <div class="plan-price">
+                <span class="plan-currency">$</span>
+                <span class="plan-amount" data-monthly="25" data-annual="20">25</span>
+                <span class="plan-period">/mo</span>
+              </div>
+              <div class="plan-annual-note" id="note-growth">Billed $240/year</div>
+            </div>
+            <div class="plan-setup">+ $50 one-time setup fee</div>
+          </div>
+          <ul class="plan-features">
+            <li class="feat-yes">Up to 200 workers</li>
+            <li class="feat-yes">Unlimited departments</li>
+            <li class="feat-yes">All 6 core features</li>
+            <li class="feat-yes">WhatsApp + SMS reminders</li>
+            <li class="feat-yes">PDF timetable export</li>
+            <li class="feat-yes">Priority support (24hr)</li>
+            <li class="feat-yes">Attendance analytics</li>
+            <li class="feat-no">Multi-campus</li>
+            <li class="feat-no">Dedicated account manager</li>
+          </ul>
+          <a href="checkout.html?plan=growth" class="btn btn-primary plan-cta" id="cta-growth">Get Started Free</a>
+          <p class="plan-trial">7-day free trial · No card needed</p>
+        </div>
+
+        <!-- ENTERPRISE -->
+        <div class="plan-card glass-card" id="card-enterprise">
+          <div class="plan-header">
+            <div class="plan-name">Enterprise</div>
+            <div class="plan-for">Large Churches · 200+ Workers</div>
+            <div class="plan-price-wrap">
+              <div class="plan-price">
+                <span class="plan-currency">$</span>
+                <span class="plan-amount" data-monthly="50" data-annual="40">50</span>
+                <span class="plan-period">+/mo</span>
+              </div>
+              <div class="plan-annual-note" id="note-enterprise">Billed $480+/year</div>
+            </div>
+            <div class="plan-setup">+ $100 one-time setup fee</div>
+          </div>
+          <ul class="plan-features">
+            <li class="feat-yes">Unlimited workers</li>
+            <li class="feat-yes">Unlimited departments</li>
+            <li class="feat-yes">All Growth features</li>
+            <li class="feat-yes">Multi-campus support
+              <span class="feat-tip" data-tip="Manage multiple branches or campuses from one admin account.">?</span>
+            </li>
+            <li class="feat-yes">Dedicated account manager</li>
+            <li class="feat-yes">Custom onboarding (3 days)</li>
+            <li class="feat-yes">Denomination HQ deals</li>
+            <li class="feat-yes">SLA & uptime guarantee</li>
+            <li class="feat-yes">API access (coming soon)</li>
+          </ul>
+          <a href="checkout.html?plan=enterprise" class="btn btn-secondary plan-cta" id="cta-enterprise">Contact Sales</a>
+          <p class="plan-trial">Custom demo & scoping call</p>
+        </div>
+
+      </div>
+      <p class="plans-note">💡 Pay annually and save 20%. All prices in US Dollars ($). Nigerian churches can pay in Naira — <a href="#contact">contact us</a>.</p>
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section class="compare-section section" id="compare">
+    <div class="container">
+      <div class="section-label">Feature Comparison</div>
+      <h2 class="section-title">Side-by-Side Breakdown</h2>
+      <p class="section-sub">Everything you need to choose the right plan — at a glance.</p>
+      <div class="compare-wrap glass-card">
+        <table class="compare-table" id="compareTable">
+          <thead>
+            <tr>
+              <th class="feat-col">Feature</th>
+              <th>Starter</th>
+              <th class="th-featured">Growth</th>
+              <th>Enterprise</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="compare-group-row"><td colspan="4">Core Limits</td></tr>
+            <tr>
+              <td>Max Workers <span class="feat-tip" data-tip="Total workers across all departments.">?</span></td>
+              <td>50</td><td class="td-featured">200</td><td>Unlimited</td>
+            </tr>
+            <tr>
+              <td>Departments</td>
+              <td>5</td><td class="td-featured">Unlimited</td><td>Unlimited</td>
+            </tr>
+            <tr>
+              <td>Admin Users</td>
+              <td>2</td><td class="td-featured">5</td><td>Unlimited</td>
+            </tr>
+            <tr class="compare-group-row"><td colspan="4">Scheduling & Attendance</td></tr>
+            <tr>
+              <td>Worker Scheduling</td>
+              <td>✅</td><td class="td-featured">✅</td><td>✅</td>
+            </tr>
+            <tr>
+              <td>Auto Rotation Generator</td>
+              <td>✅</td><td class="td-featured">✅</td><td>✅</td>
+            </tr>
+            <tr>
+              <td>Attendance Tracking</td>
+              <td>✅</td><td class="td-featured">✅</td><td>✅</td>
+            </tr>
+            <tr>
+              <td>Replacement Requests</td>
+              <td>✅</td><td class="td-featured">✅</td><td>✅</td>
+            </tr>
+            <tr class="compare-group-row"><td colspan="4">Notifications</td></tr>
+            <tr>
+              <td>WhatsApp Reminders</td>
+              <td>✅</td><td class="td-featured">✅</td><td>✅</td>
+            </tr>
+            <tr>
+              <td>SMS Fallback</td>
+              <td>❌</td><td class="td-featured">✅</td><td>✅</td>
+            </tr>
+            <tr>
+              <td>Email Summaries</td>
+              <td>❌</td><td class="td-featured">✅</td><td>✅</td>
+            </tr>
+            <tr class="compare-group-row"><td colspan="4">Reporting & Export</td></tr>
+            <tr>
+              <td>Attendance Reports</td>
+              <td>Basic</td><td class="td-featured">Advanced</td><td>Advanced</td>
+            </tr>
+            <tr>
+              <td>PDF Timetable Export</td>
+              <td>❌</td><td class="td-featured">✅</td><td>✅</td>
+            </tr>
+            <tr>
+              <td>Analytics Dashboard</td>
+              <td>❌</td><td class="td-featured">✅</td><td>✅</td>
+            </tr>
+            <tr class="compare-group-row"><td colspan="4">Support & Onboarding</td></tr>
+            <tr>
+              <td>Email Support</td>
+              <td>48hr</td><td class="td-featured">24hr</td><td>Priority</td>
+            </tr>
+            <tr>
+              <td>Multi-campus Support</td>
+              <td>❌</td><td class="td-featured">❌</td><td>✅</td>
+            </tr>
+            <tr>
+              <td>Dedicated Account Manager</td>
+              <td>❌</td><td class="td-featured">❌</td><td>✅</td>
+            </tr>
+            <tr>
+              <td>Custom Onboarding</td>
+              <td>❌</td><td class="td-featured">❌</td><td>✅</td>
+            </tr>
+            <tr class="compare-cta-row">
+              <td></td>
+              <td><a href="checkout.html?plan=starter" class="btn btn-secondary btn-sm" id="compare-cta-starter">Get Started</a></td>
+              <td class="td-featured"><a href="checkout.html?plan=growth" class="btn btn-primary btn-sm" id="compare-cta-growth">Get Started</a></td>
+              <td><a href="checkout.html?plan=enterprise" class="btn btn-secondary btn-sm" id="compare-cta-enterprise">Contact Sales</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section section" id="testimonials">
+    <div class="container">
+      <div class="section-label">Social Proof</div>
+      <h2 class="section-title">Trusted by Ministry Leaders</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card glass-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Before ServeFlow, our Ushering department had a different 'coordinator' every month because nobody could keep up with the WhatsApp thread. Now everything is automatic."</p>
+          <div class="testimonial-author">
+            <div class="test-avatar" style="background:linear-gradient(135deg,#7C3AED,#4F46E5)">PO</div>
+            <div>
+              <div class="test-name">Pastor Obinna Nwosu</div>
+              <div class="test-church">Covenant Life Church · Port Harcourt</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card glass-card testimonial-featured">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"The rotation generator alone saved me 3 hours every month. I can now focus on ministry instead of administrative headaches. Worth every kobo."</p>
+          <div class="testimonial-author">
+            <div class="test-avatar" style="background:linear-gradient(135deg,#059669,#10B981)">AM</div>
+            <div>
+              <div class="test-name">Admin. Adaeze Mensah</div>
+              <div class="test-church">Grace Assembly · Lagos · Growth Plan</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card glass-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Our attendance rate went from 71% to 89% in two months — just because workers started getting reminders. The data doesn't lie."</p>
+          <div class="testimonial-author">
+            <div class="test-avatar" style="background:linear-gradient(135deg,#D97706,#F59E0B)">TK</div>
+            <div>
+              <div class="test-name">Tunde Kareem</div>
+              <div class="test-church">Redeemed Fire · Abuja</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- TRUST LOGOS -->
+      <div class="trust-bar">
+        <div class="trust-label">Trusted by churches across Africa</div>
+        <div class="trust-logos">
+          <div class="trust-logo-item">🏛️ Grace Assembly</div>
+          <div class="trust-logo-item">🏛️ Covenant Life</div>
+          <div class="trust-logo-item">🏛️ Redeemed Fire</div>
+          <div class="trust-logo-item">🏛️ Living Word Chapel</div>
+          <div class="trust-logo-item">🏛️ New Horizon Church</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEE -->
+  <section class="guarantee-section section" id="guarantee">
+    <div class="container">
+      <div class="guarantee-box glass-card">
+        <div class="guarantee-icon">🛡️</div>
+        <div class="guarantee-content">
+          <h3>30-Day Money-Back Guarantee</h3>
+          <p>If ServeFlow doesn't save your team at least 3 hours of coordination work in the first 30 days, we'll refund your first month — no questions asked. We're that confident in what we've built.</p>
+        </div>
+        <div class="guarantee-badge">
+          <div class="gb-inner">
+            <div class="gb-number">30</div>
+            <div class="gb-text">Day Guarantee</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section section" id="faq">
+    <div class="container">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Got Questions? <span class="glow-text">We've Got Answers.</span></h2>
+      <div class="faq-grid">
+        <div class="faq-col">
+          <div class="faq-item glass-card">
+            <button class="faq-q" id="fq1">Do my workers need smartphones?<span class="faq-arrow">›</span></button>
+            <div class="faq-a" id="fa1">No. Workers receive reminders via WhatsApp or SMS — which works on any phone. Only leaders and admins need access to the web dashboard.</div>
+          </div>
+          <div class="faq-item glass-card">
+            <button class="faq-q" id="fq2">Is there a free trial?<span class="faq-arrow">›</span></button>
+            <div class="faq-a" id="fa2">Yes — every plan includes a 7-day free trial with no credit card required. We also offer a free 15-minute personalized demo before you commit to anything.</div>
+          </div>
+          <div class="faq-item glass-card">
+            <button class="faq-q" id="fq3">What happens if I exceed my worker limit?<span class="faq-arrow">›</span></button>
+            <div class="faq-a" id="fa3">We'll notify you when you're approaching your limit and make it easy to upgrade. We never cut off your service without warning — your ministry won't be disrupted.</div>
+          </div>
+          <div class="faq-item glass-card">
+            <button class="faq-q" id="fq4">Can I cancel anytime?<span class="faq-arrow">›</span></button>
+            <div class="faq-a" id="fa4">Absolutely. Cancel anytime from your account settings. We'll export all your data for you before your account closes. No lock-in contracts.</div>
+          </div>
+        </div>
+        <div class="faq-col">
+          <div class="faq-item glass-card">
+            <button class="faq-q" id="fq5">How does the setup fee work?<span class="faq-arrow">›</span></button>
+            <div class="faq-a" id="fa5">The one-time setup fee covers our team configuring your church profile, importing workers, setting up departments, and training your admin. It's a done-for-you onboarding — not a DIY tool.</div>
+          </div>
+          <div class="faq-item glass-card">
+            <button class="faq-q" id="fq6">Can I pay in Naira?<span class="faq-arrow">›</span></button>
+            <div class="faq-a" id="fa6">Yes! Nigerian churches can pay via bank transfer in Naira at the current exchange rate. Contact us via WhatsApp and we'll send a local payment link.</div>
+          </div>
+          <div class="faq-item glass-card">
+            <button class="faq-q" id="fq7">Do you offer discounts for denominations?<span class="faq-arrow">›</span></button>
+            <div class="faq-a" id="fa7">Yes. If you're managing multiple churches or branches under one denomination, we offer special Enterprise deals. Contact our sales team for a custom quote.</div>
+          </div>
+          <div class="faq-item glass-card">
+            <button class="faq-q" id="fq8">Is my church data secure?<span class="faq-arrow">›</span></button>
+            <div class="faq-a" id="fa8">Your data is encrypted in transit and at rest. We never share, sell, or use your church data for any purpose other than running your ServeFlow account.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="pricing-cta-section section" id="contact">
+    <div class="container">
+      <div class="pricing-cta-box glass-card animate-pulse-glow">
+        <div class="pcta-glow"></div>
+        <div class="pcta-content">
+          <h2>Ready to End the Ministry Chaos?<br/><span class="glow-text">Start Free Today.</span></h2>
+          <p>Join 120+ ministry leaders who've transformed how their church runs weekend services. Setup takes less than 7 days.</p>
+          <div class="pcta-actions">
+            <a href="dashboard.html" class="btn btn-primary" id="ctaDemo">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><polygon points="5 3 19 12 5 21 5 3" fill="currentColor"/></svg>
+              View Live Demo
+            </a>
+            <a href="https://wa.me/234XXXXXXXXXX?text=Hi%2C%20I%27m%20interested%20in%20ServeFlow" target="_blank" class="btn btn-secondary" id="ctaWhatsApp">
+              💬 WhatsApp Us
+            </a>
+          </div>
+          <p class="pcta-note">🛡️ 7-day free trial · 30-day money-back · Cancel anytime</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="nav-logo-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M2 17l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
+            <span>ServeFlow</span>
+          </a>
+          <p>Church workforce management infrastructure for African ministries.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Product</h4>
+            <a href="index.html#features">Features</a>
+            <a href="dashboard.html">Demo</a>
+            <a href="pricing.html">Pricing</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="#">About</a>
+            <a href="#">Blog</a>
+            <a href="#">Contact</a>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <a href="mailto:hello@serveflow.ng">hello@serveflow.ng</a>
+            <a href="#">WhatsApp</a>
+            <a href="#">Instagram</a>
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="footer-bottom">
+        <p>© 2026 ServeFlow. All rights reserved.</p>
+        <p>Built for the Church. Built in Nigeria. 🇳🇬</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- TOOLTIP -->
+  <div class="feat-tooltip" id="featTooltip"></div>
+
+  <script src="pricing.js"></script>
+</body>
+</html>

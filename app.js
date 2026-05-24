@@ -21,7 +21,7 @@ const WORKERS = [
 
 const DEPT_ATTENDANCE = [
   { name:'Ushers',           pct:92 },
-  { name:'Media Team',       pct:88 },
+  { name:'Media Team',       pct:70 },
   { name:'Choir',            pct:79 },
   { name:'Protocol',         pct:95 },
   { name:'Prayer Unit',      pct:83 },
@@ -129,6 +129,7 @@ function navigateTo(page) {
     overview: 'Overview', workers: 'Workers', schedule: 'Schedule',
     attendance: 'Attendance', replacements: 'Replacements',
     reminders: 'Reminders', reports: 'Reports', settings: 'Settings',
+    notifications: 'Notifications', profile: 'My Profile',
   };
   document.getElementById('pageTitle').textContent = titles[page] || page;
 
@@ -140,11 +141,12 @@ function navigateTo(page) {
   if (page === 'replacements') renderReplacements();
   if (page === 'reminders')    renderReminders();
   if (page === 'reports')      renderReports();
+  if (page === 'settings')     renderSettings();
+  if (page === 'notifications') renderNotifications();
+  if (page === 'profile')      renderProfile();
 
-  // Close sidebar on mobile
-  if (window.innerWidth < 768) {
-    document.getElementById('sidebar').classList.remove('open');
-  }
+  // Close sidebar on mobile after navigating
+  if (window.innerWidth < 768) closeSidebar();
 }
 
 // ---- RENDER: OVERVIEW ----
@@ -226,7 +228,7 @@ function renderWorkers(filter='', dept='') {
           <div class="worker-phone">${w.phone}</div>
         </div>
       </div></td>
-      <td>${w.dept}</td>
+      <td><span class="badge badge-purple">${w.dept}</span></td>
       <td>${w.role}</td>
       <td>${w.phone}</td>
       <td>${getStatusBadge(w.status)}</td>
@@ -412,13 +414,125 @@ function renderReports() {
   });
 }
 
+// ---- RENDER: SETTINGS ----
+function renderSettings() {
+  const deptList = document.getElementById('settingsDeptList');
+  if (deptList && !deptList.dataset.rendered) {
+    deptList.dataset.rendered = '1';
+    const depts = ['Ushers','Choir','Media Team','Protocol','Prayer Unit','Security',"Children's Church",'Technical Team'];
+    deptList.innerHTML = depts.map(d => `
+      <div class="dept-manage-row">
+        <span class="badge badge-purple">${d}</span>
+        <div style="display:flex;gap:8px">
+          <button class="btn btn-ghost btn-sm" onclick="toast('Editing ${d} department...')">✏️ Edit</button>
+          <button class="btn btn-ghost btn-sm" style="color:var(--brand-rose)" onclick="toast('${d} removal disabled in demo.')">🗑️</button>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  document.querySelectorAll('.settings-tab').forEach(tab => {
+    tab.onclick = () => {
+      document.querySelectorAll('.settings-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.settings-panel').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      const panel = document.getElementById('stab-' + tab.dataset.tab);
+      if (panel) panel.classList.add('active');
+    };
+  });
+}
+
+// ---- NOTIFICATIONS DATA ----
+const NOTIFICATIONS = [
+  { id:1, type:'alert',    icon:'⚠️', title:'3 workers flagged for repeated absences',       body:'Ruth Adeleke, Blessing Uche, and Grace Emeka have missed 2+ consecutive services.',   time:'Today, 9:00 AM',     unread:true  },
+  { id:2, type:'reminder', icon:'📤', title:'Reminders sent to 142 workers',                 body:'Sunday service reminders dispatched via WhatsApp successfully.',                      time:'Today, 8:02 AM',     unread:true  },
+  { id:3, type:'alert',    icon:'🔄', title:'Replacement request from Grace Emeka',          body:'Grace Emeka (Choir) has requested a replacement for Sunday 27 Apr — 1st Service.',   time:'Today, 7:45 AM',     unread:true  },
+  { id:4, type:'system',   icon:'✅', title:'April rotation schedule generated',             body:'Monthly rotation for all 8 departments has been auto-generated.',                    time:'Yesterday, 4:15 PM', unread:false },
+  { id:5, type:'reminder', icon:'📤', title:'Friday Prayer reminders sent',                  body:'23 workers in Prayer Unit and Choir were notified for Friday service.',              time:'22 Apr, 7:00 AM',    unread:false },
+  { id:6, type:'system',   icon:'🎉', title:'New worker added — Adaeze Okonkwo',             body:'Adaeze Okonkwo was successfully added to the Ushers department.',                    time:'22 Apr, 11:30 AM',   unread:false },
+  { id:7, type:'alert',    icon:'❌', title:'WhatsApp delivery failed for Ruth Adeleke',     body:'Could not reach Ruth Adeleke via WhatsApp. SMS fallback initiated.',                 time:'21 Apr, 8:05 AM',    unread:false },
+  { id:8, type:'system',   icon:'📊', title:'March Attendance Report ready',                 body:'Monthly attendance report for March 2025 generated. Click to download.',             time:'1 Apr, 10:00 AM',    unread:false },
+];
+
+let notifData = [...NOTIFICATIONS];
+
+function renderNotifications(filter) {
+  const list = document.getElementById('notifList');
+  if (!list) return;
+  if (!filter) filter = document.querySelector('.notif-filter-btn.active')?.dataset.filter || 'all';
+
+  document.querySelectorAll('.notif-filter-btn').forEach(btn => {
+    btn.onclick = () => {
+      document.querySelectorAll('.notif-filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderNotifications(btn.dataset.filter);
+    };
+  });
+
+  const filtered = filter === 'all' ? notifData : notifData.filter(n => n.type === filter);
+  list.innerHTML = filtered.length === 0
+    ? '<div class="notif-empty">No notifications in this category.</div>'
+    : filtered.map(n => `
+      <div class="notif-item glass-card ${n.unread ? 'notif-unread' : ''}" id="notif-${n.id}">
+        <div class="notif-icon-wrap ${n.type}">${n.icon}</div>
+        <div class="notif-body">
+          <div class="notif-title">${n.title}${n.unread ? '<span class="notif-new-dot"></span>' : ''}</div>
+          <div class="notif-desc">${n.body}</div>
+          <div class="notif-time">${n.time}</div>
+        </div>
+        <button class="notif-dismiss" onclick="dismissNotif(${n.id})" title="Dismiss">✕</button>
+      </div>
+    `).join('');
+}
+
+function dismissNotif(id) {
+  notifData = notifData.filter(n => n.id !== id);
+  renderNotifications();
+  toast('Notification dismissed.');
+}
+
+function markAllRead() {
+  notifData.forEach(n => n.unread = false);
+  document.getElementById('notifList').querySelectorAll('.notif-unread').forEach(el => el.classList.remove('notif-unread'));
+  document.getElementById('notifList').querySelectorAll('.notif-new-dot').forEach(el => el.remove());
+  document.querySelector('.notif-dot')?.style.setProperty('display','none');
+  toast('✅ All notifications marked as read.');
+}
+
+// ---- RENDER: PROFILE ----
+function renderProfile() { /* profile is static HTML */ }
+
+// ---- TOPBAR ICON BUTTONS ----
+document.getElementById('notifBtn')?.addEventListener('click', () => navigateTo('notifications'));
+document.getElementById('profileAvatar')?.addEventListener('click', () => navigateTo('profile'));
+
 // ---- SIDEBAR TOGGLE ----
+function openSidebar() {
+  const sb = document.getElementById('sidebar');
+  sb.classList.add('open');
+  // Create backdrop
+  if (!document.getElementById('sidebarBackdrop')) {
+    const bd = document.createElement('div');
+    bd.id = 'sidebarBackdrop';
+    bd.className = 'sidebar-backdrop';
+    bd.addEventListener('click', closeSidebar);
+    document.body.appendChild(bd);
+  }
+}
+
+function closeSidebar() {
+  document.getElementById('sidebar').classList.remove('open');
+  const bd = document.getElementById('sidebarBackdrop');
+  if (bd) bd.remove();
+}
+
 document.getElementById('sidebarToggle').addEventListener('click', () => {
   const sb = document.getElementById('sidebar');
   if (window.innerWidth < 768) {
-    sb.classList.toggle('open');
+    sb.classList.contains('open') ? closeSidebar() : openSidebar();
   } else {
     sb.classList.toggle('collapsed');
+    document.getElementById('dashMain').style.marginLeft = '';
   }
 });
 

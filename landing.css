@@ -790,4 +790,40 @@
   .footer-brand { max-width: 100%; }
   .footer-links { flex-wrap: wrap; gap: 32px; }
   .footer-bottom { flex-direction: column; gap: 8px; }
+
+  /* Hero */
+  .hero { padding-top: 72px; }
+  .hero-content { padding-top: 40px; padding-bottom: 48px; }
+  .hero-sub { font-size: 1rem; }
+  .hero-ctas { flex-direction: column; align-items: center; }
+  .hero-ctas .btn { width: 100%; justify-content: center; max-width: 320px; }
+  .hero-social-proof { flex-direction: column; text-align: center; }
+
+  /* CTA section */
+  .cta-box { padding: 48px 24px; }
+  .cta-actions { flex-direction: column; align-items: center; }
+  .cta-actions .btn { width: 100%; justify-content: center; max-width: 320px; }
+
+  /* Section headings */
+  .section-sub { font-size: 0.95rem; }
+
+  /* How it works steps */
+  .steps { flex-direction: column; align-items: stretch; }
+  .step { flex-direction: row; align-items: flex-start; }
+  .step-content { flex: 1; }
+  .step-connector { display: none; }
 }
+
+@media (max-width: 480px) {
+  .hero-headline { font-size: 2.2rem; }
+  .section-title { font-size: 1.6rem; }
+  .cta-box h2 { font-size: 1.7rem; }
+  .hero-dashboard-preview { border-radius: var(--radius-lg); }
+  .problem-grid { grid-template-columns: 1fr; }
+  .features-grid { grid-template-columns: 1fr; }
+  .pricing-grid { grid-template-columns: 1fr; max-width: 100%; }
+  .faq-list { padding: 0; }
+  .faq-q { padding: 16px; font-size: 0.875rem; }
+  .faq-a { padding: 0 16px 14px; }
+}
+

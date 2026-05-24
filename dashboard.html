@@ -22,7 +22,7 @@
     </div>
 
     <div class="sidebar-church glass-card">
-      <div class="church-avatar">DC</div>
+      <div class="church-avatar">GA</div>
       <div>
         <div class="church-name">Grace Assembly</div>
         <div class="church-plan"><span class="badge badge-purple">Growth Plan</span></div>
@@ -62,7 +62,7 @@
     </nav>
 
     <div class="sidebar-footer">
-      <a href="#" class="nav-item" data-page="settings">
+      <a href="#" class="nav-item" data-page="settings" id="nav-settings">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         <span>Settings</span>
       </a>
@@ -88,11 +88,11 @@
         </div>
       </div>
       <div class="topbar-right">
-        <button class="topbar-icon-btn" title="Notifications">
+        <button class="topbar-icon-btn" id="notifBtn" title="Notifications" data-page="notifications">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" stroke="currentColor" stroke-width="2"/><path d="M13.73 21a2 2 0 0 1-3.46 0" stroke="currentColor" stroke-width="2"/></svg>
           <span class="notif-dot"></span>
         </button>
-        <div class="topbar-avatar">CO</div>
+        <div class="topbar-avatar" id="profileAvatar" data-page="profile" title="My Profile">CO</div>
       </div>
     </header>
 
@@ -411,6 +411,294 @@
           </div>
           <div class="trend-chart" id="trendChart"><!-- Rendered by JS --></div>
         </div>
+      </div>
+
+      <!-- ========== SETTINGS PAGE ========== -->
+      <div class="page hidden" id="page-settings">
+        <div class="settings-layout">
+
+          <!-- Sidebar Tabs -->
+          <div class="settings-tabs glass-card">
+            <div class="settings-tab-label">Settings</div>
+            <button class="settings-tab active" data-tab="general">🏛️ General</button>
+            <button class="settings-tab" data-tab="notifications-pref">🔔 Notifications</button>
+            <button class="settings-tab" data-tab="departments">📂 Departments</button>
+            <button class="settings-tab" data-tab="integrations">🔗 Integrations</button>
+            <button class="settings-tab" data-tab="danger">⚠️ Danger Zone</button>
+          </div>
+
+          <!-- Tab Content -->
+          <div class="settings-content">
+
+            <!-- General -->
+            <div class="settings-panel active" id="stab-general">
+              <div class="glass-card settings-section">
+                <h3 class="settings-section-title">Church Information</h3>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>Church Name</label>
+                    <input type="text" class="dash-input" value="Grace Assembly" />
+                  </div>
+                  <div class="form-group">
+                    <label>Location / Branch</label>
+                    <input type="text" class="dash-input" value="Lagos, Nigeria" />
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>Pastor / Lead Contact</label>
+                    <input type="text" class="dash-input" value="Pastor Emmanuel" />
+                  </div>
+                  <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" class="dash-input" value="admin@graceassembly.ng" />
+                  </div>
+                </div>
+                <div class="form-group" style="margin-top:8px">
+                  <label>Service Days</label>
+                  <div class="service-days-picker">
+                    <label class="day-chip active"><input type="checkbox" checked hidden />Sun</label>
+                    <label class="day-chip"><input type="checkbox" hidden />Mon</label>
+                    <label class="day-chip"><input type="checkbox" hidden />Tue</label>
+                    <label class="day-chip"><input type="checkbox" hidden />Wed</label>
+                    <label class="day-chip"><input type="checkbox" hidden />Thu</label>
+                    <label class="day-chip active"><input type="checkbox" checked hidden />Fri</label>
+                    <label class="day-chip"><input type="checkbox" hidden />Sat</label>
+                  </div>
+                </div>
+                <div class="settings-footer-row">
+                  <button class="btn btn-primary btn-sm" onclick="toast('✅ Church information saved!')">Save Changes</button>
+                </div>
+              </div>
+
+              <div class="glass-card settings-section">
+                <h3 class="settings-section-title">Subscription Plan</h3>
+                <div class="plan-card-inner">
+                  <div class="plan-badge"><span class="badge badge-purple">Growth Plan</span></div>
+                  <div class="plan-details">
+                    <div class="plan-name">Growth Plan</div>
+                    <div class="plan-features">
+                      <span>✅ Up to 200 workers</span>
+                      <span>✅ WhatsApp notifications</span>
+                      <span>✅ Automated scheduling</span>
+                      <span>✅ Attendance reports</span>
+                    </div>
+                  </div>
+                  <a href="pricing.html" class="btn btn-secondary btn-sm">Upgrade Plan</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Notifications Preferences -->
+            <div class="settings-panel" id="stab-notifications-pref">
+              <div class="glass-card settings-section">
+                <h3 class="settings-section-title">Notification Channels</h3>
+                <div class="toggle-list">
+                  <div class="toggle-row">
+                    <div><div class="toggle-title">WhatsApp Reminders</div><div class="toggle-sub">Send service reminders to workers via WhatsApp 2 days before</div></div>
+                    <label class="toggle-switch"><input type="checkbox" checked /><span class="toggle-track"></span></label>
+                  </div>
+                  <div class="toggle-row">
+                    <div><div class="toggle-title">SMS Fallback</div><div class="toggle-sub">Send SMS if WhatsApp delivery fails</div></div>
+                    <label class="toggle-switch"><input type="checkbox" checked /><span class="toggle-track"></span></label>
+                  </div>
+                  <div class="toggle-row">
+                    <div><div class="toggle-title">Email Summaries</div><div class="toggle-sub">Receive weekly attendance summary via email</div></div>
+                    <label class="toggle-switch"><input type="checkbox" /><span class="toggle-track"></span></label>
+                  </div>
+                  <div class="toggle-row">
+                    <div><div class="toggle-title">Absence Alerts</div><div class="toggle-sub">Get alerted when a worker misses 2+ consecutive services</div></div>
+                    <label class="toggle-switch"><input type="checkbox" checked /><span class="toggle-track"></span></label>
+                  </div>
+                </div>
+              </div>
+              <div class="glass-card settings-section">
+                <h3 class="settings-section-title">Reminder Timing</h3>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>First Reminder (days before service)</label>
+                    <select class="dash-select dash-input"><option>3 days</option><option selected>2 days</option><option>1 day</option></select>
+                  </div>
+                  <div class="form-group">
+                    <label>Same-Day Reminder</label>
+                    <select class="dash-select dash-input"><option>Disabled</option><option selected>6:00 AM</option><option>7:00 AM</option><option>8:00 AM</option></select>
+                  </div>
+                </div>
+                <div class="settings-footer-row">
+                  <button class="btn btn-primary btn-sm" onclick="toast('✅ Notification preferences saved!')">Save Preferences</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Departments -->
+            <div class="settings-panel" id="stab-departments">
+              <div class="glass-card settings-section">
+                <h3 class="settings-section-title">Manage Departments</h3>
+                <div class="dept-list" id="settingsDeptList"></div>
+                <button class="btn btn-secondary btn-sm" style="margin-top:16px" onclick="toast('Feature coming soon — add custom department')">+ Add Department</button>
+              </div>
+            </div>
+
+            <!-- Integrations -->
+            <div class="settings-panel" id="stab-integrations">
+              <div class="glass-card settings-section">
+                <h3 class="settings-section-title">Connected Services</h3>
+                <div class="integration-list">
+                  <div class="integration-item">
+                    <div class="integration-icon" style="background:rgba(37,211,102,0.15);border-color:rgba(37,211,102,0.25)">💬</div>
+                    <div class="integration-info"><div class="integration-name">WhatsApp Business API</div><div class="integration-status connected">● Connected</div></div>
+                    <button class="btn btn-ghost btn-sm" onclick="toast('WhatsApp settings opened')">Configure</button>
+                  </div>
+                  <div class="integration-item">
+                    <div class="integration-icon" style="background:rgba(14,165,233,0.15);border-color:rgba(14,165,233,0.25)">📧</div>
+                    <div class="integration-info"><div class="integration-name">Email (SMTP)</div><div class="integration-status disconnected">○ Not connected</div></div>
+                    <button class="btn btn-primary btn-sm" onclick="toast('Connect your email provider')">Connect</button>
+                  </div>
+                  <div class="integration-item">
+                    <div class="integration-icon" style="background:rgba(124,58,237,0.15);border-color:rgba(124,58,237,0.25)">📱</div>
+                    <div class="integration-info"><div class="integration-name">SMS Gateway</div><div class="integration-status connected">● Connected</div></div>
+                    <button class="btn btn-ghost btn-sm" onclick="toast('SMS gateway settings opened')">Configure</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Danger Zone -->
+            <div class="settings-panel" id="stab-danger">
+              <div class="glass-card settings-section danger-zone">
+                <h3 class="settings-section-title" style="color:var(--brand-rose)">⚠️ Danger Zone</h3>
+                <div class="danger-item">
+                  <div><div class="danger-title">Reset All Attendance Data</div><div class="danger-sub">Permanently delete all attendance records. This cannot be undone.</div></div>
+                  <button class="btn btn-sm" style="background:rgba(244,63,94,0.15);color:#F43F5E;border:1px solid rgba(244,63,94,0.3)" onclick="toast('⚠️ This action is disabled in demo mode.')">Reset Data</button>
+                </div>
+                <div class="danger-item">
+                  <div><div class="danger-title">Delete Church Account</div><div class="danger-sub">Remove all data and cancel your subscription permanently.</div></div>
+                  <button class="btn btn-sm" style="background:rgba(244,63,94,0.15);color:#F43F5E;border:1px solid rgba(244,63,94,0.3)" onclick="toast('⚠️ This action is disabled in demo mode.')">Delete Account</button>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /settings-content -->
+        </div><!-- /settings-layout -->
+      </div>
+
+      <!-- ========== NOTIFICATIONS PAGE ========== -->
+      <div class="page hidden" id="page-notifications">
+        <div class="notif-page-header glass-card">
+          <div>
+            <h3>Notifications</h3>
+            <p class="text-secondary text-sm">All alerts, reminders, and system messages for Grace Assembly.</p>
+          </div>
+          <button class="btn btn-ghost btn-sm" onclick="markAllRead()">✅ Mark All Read</button>
+        </div>
+
+        <div class="notif-filter-bar">
+          <button class="notif-filter-btn active" data-filter="all">All</button>
+          <button class="notif-filter-btn" data-filter="alert">Alerts</button>
+          <button class="notif-filter-btn" data-filter="reminder">Reminders</button>
+          <button class="notif-filter-btn" data-filter="system">System</button>
+        </div>
+
+        <div class="notif-list" id="notifList"><!-- Rendered by JS --></div>
+      </div>
+
+      <!-- ========== PROFILE PAGE ========== -->
+      <div class="page hidden" id="page-profile">
+        <div class="profile-layout">
+
+          <!-- Profile Card -->
+          <div class="glass-card profile-card">
+            <div class="profile-banner"></div>
+            <div class="profile-card-body">
+              <div class="profile-avatar-wrap">
+                <div class="profile-avatar">CO</div>
+                <button class="profile-avatar-edit" onclick="toast('Photo upload coming soon!')">📷</button>
+              </div>
+              <div class="profile-name">Chukwuemeka Okafor</div>
+              <div class="profile-role"><span class="badge badge-purple">Church Admin</span></div>
+              <div class="profile-church">Grace Assembly · Lagos, Nigeria</div>
+              <div class="profile-stats">
+                <div class="profile-stat"><div class="profile-stat-val">142</div><div class="profile-stat-label">Workers</div></div>
+                <div class="profile-stat"><div class="profile-stat-val">8</div><div class="profile-stat-label">Departments</div></div>
+                <div class="profile-stat"><div class="profile-stat-val">87%</div><div class="profile-stat-label">Avg Attendance</div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Profile Details -->
+          <div class="profile-details">
+
+            <div class="glass-card settings-section">
+              <h3 class="settings-section-title">Personal Information</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Full Name</label>
+                  <input type="text" class="dash-input" value="Chukwuemeka Okafor" />
+                </div>
+                <div class="form-group">
+                  <label>Display Name</label>
+                  <input type="text" class="dash-input" value="Emeka" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Email Address</label>
+                  <input type="email" class="dash-input" value="c.okafor@graceassembly.ng" />
+                </div>
+                <div class="form-group">
+                  <label>Phone Number</label>
+                  <input type="tel" class="dash-input" value="08012300001" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Role / Title</label>
+                  <input type="text" class="dash-input" value="Church Admin" />
+                </div>
+                <div class="form-group">
+                  <label>Department</label>
+                  <select class="dash-select dash-input"><option>Administration</option><option>Protocol</option><option>Media Team</option></select>
+                </div>
+              </div>
+              <div class="settings-footer-row">
+                <button class="btn btn-primary btn-sm" onclick="toast('✅ Profile updated successfully!')">Save Changes</button>
+              </div>
+            </div>
+
+            <div class="glass-card settings-section">
+              <h3 class="settings-section-title">Security</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Current Password</label>
+                  <input type="password" class="dash-input" placeholder="••••••••" />
+                </div>
+                <div class="form-group">
+                  <label>New Password</label>
+                  <input type="password" class="dash-input" placeholder="••••••••" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Confirm New Password</label>
+                <input type="password" class="dash-input" placeholder="••••••••" />
+              </div>
+              <div class="settings-footer-row">
+                <button class="btn btn-ghost btn-sm" onclick="toast('✅ Password changed successfully!')">Update Password</button>
+              </div>
+            </div>
+
+            <div class="glass-card settings-section">
+              <h3 class="settings-section-title">Recent Activity</h3>
+              <div class="activity-list">
+                <div class="activity-item"><span class="activity-dot dot-green"></span><div><div class="activity-title">Approved replacement for Grace Emeka</div><div class="activity-time">Today, 9:20 AM</div></div></div>
+                <div class="activity-item"><span class="activity-dot dot-blue"></span><div><div class="activity-title">Sent reminders to 142 workers</div><div class="activity-time">Today, 8:00 AM</div></div></div>
+                <div class="activity-item"><span class="activity-dot dot-purple"></span><div><div class="activity-title">Generated April rotation schedule</div><div class="activity-time">Yesterday, 4:15 PM</div></div></div>
+                <div class="activity-item"><span class="activity-dot dot-green"></span><div><div class="activity-title">Added Adaeze Okonkwo to Ushers</div><div class="activity-time">22 Apr, 11:30 AM</div></div></div>
+                <div class="activity-item"><span class="activity-dot dot-orange"></span><div><div class="activity-title">Exported Monthly Attendance Report</div><div class="activity-time">20 Apr, 3:00 PM</div></div></div>
+              </div>
+            </div>
+
+          </div><!-- /profile-details -->
+        </div><!-- /profile-layout -->
       </div>
 
     </div><!-- /page-content -->
